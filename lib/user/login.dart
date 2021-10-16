@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:vacinapp/user/pass.dart';
+import 'package:vacinapp/user/register.dart';
 
 class UserLogin extends StatefulWidget {
   const UserLogin({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class UserLogin extends StatefulWidget {
 class _UserLoginState extends State<UserLogin> {
   void _acessar() {
     // print('acessar');
-    bool cadastrado = true;
+    bool cadastrado = false;
 
     if (cadastrado) {
       Navigator.push(
@@ -22,7 +23,14 @@ class _UserLoginState extends State<UserLogin> {
           builder: (BuildContext context) => PassUser(),
         ),
       );
-    } else {}
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => RegisterUser(),
+        ),
+      );
+    }
   }
 
   @override

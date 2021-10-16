@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class RegisterProfessional extends StatefulWidget {
-  const RegisterProfessional({Key? key}) : super(key: key);
+class RegisterUser extends StatefulWidget {
+  const RegisterUser({Key? key}) : super(key: key);
 
   @override
-  _RegisterProfessionalState createState() => _RegisterProfessionalState();
+  _RegisterUserState createState() => _RegisterUserState();
 }
 
-class _RegisterProfessionalState extends State<RegisterProfessional> {
+class _RegisterUserState extends State<RegisterUser> {
   void _registrar() {}
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _RegisterProfessionalState extends State<RegisterProfessional> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text(
-                "Novo profissional da Saúde",
+                "Novo usuário",
                 style: TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
@@ -80,7 +80,25 @@ class _RegisterProfessionalState extends State<RegisterProfessional> {
               child: TextField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "Unidade de Saúde",
+                  labelText: "Tipo Sanguíneo",
+                  labelStyle: TextStyle(
+                    color: Colors.blue[400],
+                    fontSize: 20,
+                  ),
+                ),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.blue[400],
+                  fontSize: 25,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: TextField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  labelText: "Telefone",
                   labelStyle: TextStyle(
                     color: Colors.blue[400],
                     fontSize: 20,

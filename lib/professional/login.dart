@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:vacinapp/professional/pass.dart';
+import 'package:vacinapp/professional/register.dart';
 
 class ProfessionalLogin extends StatefulWidget {
   const ProfessionalLogin({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class ProfessionalLogin extends StatefulWidget {
 
 class _ProfessionalLoginState extends State<ProfessionalLogin> {
   void _acessar() {
-    bool cadastrado = true;
+    bool cadastrado = false;
 
     if (cadastrado) {
       Navigator.push(
@@ -21,7 +22,14 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
           builder: (BuildContext context) => PassProfessional(),
         ),
       );
-    } else {}
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => RegisterProfessional(),
+        ),
+      );
+    }
   }
 
   @override
