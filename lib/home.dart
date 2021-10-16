@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:vacinapp/information.dart';
 import 'package:vacinapp/professional/home.dart';
 import 'package:vacinapp/professional/login.dart';
+import 'package:vacinapp/user/home.dart';
 import 'package:vacinapp/user/login.dart';
 
 class Home extends StatefulWidget {
@@ -27,7 +28,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => UserLogin(),
+        builder: (BuildContext context) => UserHome(),
       ),
     );
   }
