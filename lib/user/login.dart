@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:vacinapp/user/pass.dart';
 
 class UserLogin extends StatefulWidget {
   const UserLogin({Key? key}) : super(key: key);
@@ -11,7 +12,17 @@ class UserLogin extends StatefulWidget {
 
 class _UserLoginState extends State<UserLogin> {
   void _acessar() {
-    print('acessar');
+    // print('acessar');
+    bool cadastrado = true;
+
+    if (cadastrado) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => PassUser(),
+        ),
+      );
+    } else {}
   }
 
   @override

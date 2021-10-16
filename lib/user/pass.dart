@@ -1,29 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:vacinapp/professional/pass.dart';
 
-class ProfessionalLogin extends StatefulWidget {
-  const ProfessionalLogin({Key? key}) : super(key: key);
+class PassUser extends StatefulWidget {
+  const PassUser({Key? key}) : super(key: key);
 
   @override
-  _ProfessionalLoginState createState() => _ProfessionalLoginState();
+  _PassUserState createState() => _PassUserState();
 }
 
-class _ProfessionalLoginState extends State<ProfessionalLogin> {
-  void _acessar() {
-    bool cadastrado = true;
-
-    if (cadastrado) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => PassProfessional(),
-        ),
-      );
-    } else {}
-  }
-
+class _PassUserState extends State<PassUser> {
+  void _acessar() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,17 +31,28 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
               child: Icon(
-                Icons.health_and_safety,
+                Icons.person_outline,
                 size: 100,
                 color: Colors.blue[400],
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              child: Text(
+                "Olá, Leia Organa",
+                style: TextStyle(
+                  color: Colors.blue[400],
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
-                keyboardType: TextInputType.number,
+                obscureText: true,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "CPF (Somente números)",
+                  labelText: "Insira sua senha",
                   labelStyle: TextStyle(
                     color: Colors.blue[400],
                     fontSize: 20,
@@ -83,7 +81,7 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
                   ),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
