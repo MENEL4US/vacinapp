@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:vacinapp/information.dart';
+import 'package:vacinapp/professional/login.dart';
+import 'package:vacinapp/user/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,15 +14,30 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   void _profissional() {
-    print('Página profissional');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => ProfessionalLogin(),
+      ),
+    );
   }
 
   void _usuario() {
-    print('Usuário');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => UserLogin(),
+      ),
+    );
   }
 
   void _saibamais() {
-    print('Saiba mais');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => Information(),
+      ),
+    );
   }
 
   @override
@@ -29,6 +47,7 @@ class _HomeState extends State<Home> {
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
