@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -28,12 +30,12 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
               child: Text(
                 "VacinApp",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.blue[400],
                   fontWeight: FontWeight.bold,
                   fontSize: 55,
                 ),
@@ -43,8 +45,8 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  primary: Colors.blue,
-                  backgroundColor: Colors.blue,
+                  primary: Colors.blue[400],
+                  backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   _usuario();
@@ -62,8 +64,8 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  primary: Colors.blue,
-                  backgroundColor: Colors.blue,
+                  primary: Colors.blue[400],
+                  backgroundColor: Colors.blue[400],
                 ),
                 onPressed: () {
                   _profissional();
@@ -81,17 +83,16 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  primary: Colors.blue,
-                  // backgroundColor: Colors.blue,
+                  primary: Colors.blue[400],
                 ),
                 onPressed: () {
                   _saibamais();
                 },
-                child: const Text(
+                child: Text(
                   'Saiba mais sobre o VacinApp',
                   style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
+                    color: Colors.blue[400],
+                    decoration: TextDecoration.underline,
                     fontSize: 13,
                   ),
                 ),
