@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => ProfessionalHome(),
+        builder: (BuildContext context) => ProfessionalLogin(),
       ),
     );
   }
@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => UserHome(),
+        builder: (BuildContext context) => UserLogin(),
       ),
     );
   }

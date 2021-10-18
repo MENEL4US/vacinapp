@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:vacinapp/professional/register.dart';
 
 class PassProfessional extends StatefulWidget {
   const PassProfessional({Key? key}) : super(key: key);
@@ -10,7 +11,15 @@ class PassProfessional extends StatefulWidget {
 }
 
 class _PassProfessionalState extends State<PassProfessional> {
-  void _acessar() {}
+  void _acessar() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => RegisterProfessional(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

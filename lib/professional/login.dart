@@ -15,21 +15,12 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
   void _acessar() {
     bool cadastrado = false;
 
-    if (cadastrado) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => PassProfessional(),
-        ),
-      );
-    } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => RegisterProfessional(),
-        ),
-      );
-    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => PassProfessional(),
+      ),
+    );
   }
 
   @override

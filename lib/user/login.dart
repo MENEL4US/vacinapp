@@ -16,21 +16,12 @@ class _UserLoginState extends State<UserLogin> {
     // print('acessar');
     bool cadastrado = false;
 
-    if (cadastrado) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => PassUser(),
-        ),
-      );
-    } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => RegisterUser(),
-        ),
-      );
-    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => PassUser(),
+      ),
+    );
   }
 
   @override

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:vacinapp/user/register.dart';
 
 class PassUser extends StatefulWidget {
   const PassUser({Key? key}) : super(key: key);
@@ -10,7 +11,15 @@ class PassUser extends StatefulWidget {
 }
 
 class _PassUserState extends State<PassUser> {
-  void _acessar() {}
+  void _acessar() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => RegisterUser(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
