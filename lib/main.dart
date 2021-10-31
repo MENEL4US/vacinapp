@@ -1,14 +1,12 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:vacinapp/home.dart';
 import 'home.dart';
-import 'information.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
 
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Home(),
   ));

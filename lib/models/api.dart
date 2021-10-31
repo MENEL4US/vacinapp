@@ -14,4 +14,10 @@ class API {
     var response = await http.get(url);
     return response;
   }
+
+  static Future getAppliedVaccines() async {
+    var url = Uri.parse(urlBase + 'applied_vaccines');
+    var response = await http.get(url);
+    return response;
+  }
 }

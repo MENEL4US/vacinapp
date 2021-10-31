@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:vacinapp/models/api.dart';
@@ -52,10 +50,10 @@ class _InformationState extends State<Information> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
               child: Text(
                 infos[index].title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -63,7 +61,7 @@ class _InformationState extends State<Information> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text(
                 infos[index].text,
                 style: TextStyle(

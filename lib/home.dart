@@ -1,10 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:vacinapp/information.dart';
-import 'package:vacinapp/professional/home.dart';
 import 'package:vacinapp/professional/login.dart';
-import 'package:vacinapp/user/home.dart';
 import 'package:vacinapp/user/login.dart';
 
 class Home extends StatefulWidget {
@@ -19,7 +15,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => ProfessionalLogin(),
+        builder: (BuildContext context) => const ProfessionalLogin(),
       ),
     );
   }
@@ -28,7 +24,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => UserLogin(),
+        builder: (BuildContext context) => const UserLogin(),
       ),
     );
   }
@@ -37,7 +33,7 @@ class _HomeState extends State<Home> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => Information(),
+        builder: (BuildContext context) => const Information(),
       ),
     );
   }
@@ -52,7 +48,7 @@ class _HomeState extends State<Home> {
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
               child: Text(
                 "VacinApp",
                 style: TextStyle(

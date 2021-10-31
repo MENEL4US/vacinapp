@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:vacinapp/professional/pass.dart';
-// import 'package:vacinapp/professional/register.dart';
+import 'package:vacinapp/models/user.dart';
+import 'home.dart';
 
 class ProfessionalLogin extends StatefulWidget {
   const ProfessionalLogin({Key? key}) : super(key: key);
@@ -13,15 +11,20 @@ class ProfessionalLogin extends StatefulWidget {
 
 class _ProfessionalLoginState extends State<ProfessionalLogin> {
   void _acessar() {
-    // bool cadastrado = false;
+    if (_professionalInput.text != '') {
+      User user = User(name: _professionalInput.text);
+      user.save('professional_info');
+    }
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => PassProfessional(),
+        builder: (BuildContext context) => const ProfessionalHome(),
       ),
     );
   }
+
+  final TextEditingController _professionalInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,7 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
               child: Icon(
                 Icons.health_and_safety,
                 size: 100,
@@ -49,11 +52,12 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: TextField(
-                keyboardType: TextInputType.number,
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: TextFormField(
+                controller: _professionalInput,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "CPF (Somente números)",
+                  labelText: "Nome",
                   labelStyle: TextStyle(
                     color: Colors.blue[400],
                     fontSize: 20,
@@ -67,7 +71,7 @@ class _ProfessionalLoginState extends State<ProfessionalLogin> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.blue[400],

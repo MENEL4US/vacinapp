@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:vacinapp/models/api.dart';
 import 'package:vacinapp/models/vacine.dart';
@@ -73,7 +70,7 @@ class _UserHomeState extends State<UserHome> {
         body: TabBarView(
           children: [
             ListView.separated(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: emDia.length,
               itemBuilder: (BuildContext context, int index) {
                 return Center(
@@ -84,20 +81,20 @@ class _UserHomeState extends State<UserHome> {
                       children: [
                         ListTile(
                           title: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                             child: Text(
                               emDia[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
                               ),
                             ),
                           ),
                           subtitle: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                             child: Text(
                               emDia[index].description,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                               ),
@@ -113,7 +110,7 @@ class _UserHomeState extends State<UserHome> {
                   const Divider(),
             ),
             ListView.separated(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: proximas.length,
               itemBuilder: (BuildContext context, int index) {
                 return Center(
@@ -124,20 +121,20 @@ class _UserHomeState extends State<UserHome> {
                       children: [
                         ListTile(
                           title: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                             child: Text(
                               proximas[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
                               ),
                             ),
                           ),
                           subtitle: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                             child: Text(
                               proximas[index].description,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                               ),
@@ -153,7 +150,7 @@ class _UserHomeState extends State<UserHome> {
                   const Divider(),
             ),
             ListView.separated(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: atrasadas.length,
               itemBuilder: (BuildContext context, int index) {
                 return Center(
@@ -164,20 +161,20 @@ class _UserHomeState extends State<UserHome> {
                       children: [
                         ListTile(
                           title: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                             child: Text(
                               atrasadas[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
                               ),
                             ),
                           ),
                           subtitle: Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                             child: Text(
                               atrasadas[index].description,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                               ),

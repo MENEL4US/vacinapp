@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:vacinapp/models/user.dart';
 
@@ -16,13 +14,13 @@ class _UserLoginState extends State<UserLogin> {
   void _acessar() {
     if (_nameInput.text != '') {
       User user = User(name: _nameInput.text);
-      user.save();
+      user.save('user_info');
     }
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => UserHome(),
+        builder: (BuildContext context) => const UserHome(),
       ),
     );
   }
@@ -47,7 +45,7 @@ class _UserLoginState extends State<UserLogin> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
               child: Icon(
                 Icons.person_outline,
                 size: 100,
@@ -55,7 +53,7 @@ class _UserLoginState extends State<UserLogin> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: TextFormField(
                 controller: _nameInput,
                 keyboardType: TextInputType.text,
@@ -74,7 +72,7 @@ class _UserLoginState extends State<UserLogin> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.blue[400],

@@ -1,8 +1,8 @@
-// ignore_for_file: unnecessary_this, prefer_collection_literals, unnecessary_new
+// ignore_for_file: prefer_typing_uninitialized_variables
 
 class Info {
-  String title = '';
-  String text = '';
+  var title;
+  var text;
 
   Info({required this.title, required this.text});
 
@@ -12,9 +12,9 @@ class Info {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.title;
-    data['text'] = this.text;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['text'] = text;
     return data;
   }
 }
