@@ -1,10 +1,32 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:vacinapp/models/api.dart';
+import 'package:vacinapp/models/info.dart';
 
-class Information extends StatelessWidget {
+class Information extends StatefulWidget {
   const Information({Key? key}) : super(key: key);
 
+  @override
+  _InformationState createState() => _InformationState();
+}
+
+class _InformationState extends State<Information> {
+  var infos = <Info>[];
+
+  _getInfos() {
+    API.getInfos().then((value) {
+      setState(() {
+        Iterable lista = json.decode(value.body);
+        infos = (lista).map((e) => Info.fromJson(e)).toList();
+      });
+    });
+  }
+
+  _InformationState() {
+    _getInfos();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,14 +40,21 @@ class Information extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blue[400],
       ),
-      body: SingleChildScrollView(
-        child: Column(
+      body: listaInfos(),
+    );
+  }
+
+  listaInfos() {
+    return ListView.builder(
+      itemCount: infos.length,
+      itemBuilder: (context, index) {
+        return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
               child: Text(
-                'O que é o VacinApp?',
+                infos[index].title,
                 style: TextStyle(
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
@@ -36,112 +65,7 @@ class Information extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Text(
-                'A quem é destinado o VacinApp?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Text(
-                'Minhas informações estão seguras?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Text(
-                'O que é o VacinApp?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Text(
-                'O que é o VacinApp?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
-              child: Text(
-                'O que é o VacinApp?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text(
-                'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Si num tem leite então bota uma pinga aí cumpadi! Cevadis im ampola pa arma uma pindureta. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque.',
+                infos[index].text,
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 15,
@@ -149,8 +73,8 @@ class Information extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 }
