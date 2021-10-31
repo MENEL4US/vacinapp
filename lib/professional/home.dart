@@ -10,7 +10,7 @@ class ProfessionalHome extends StatefulWidget {
 }
 
 class _ProfessionalHomeState extends State<ProfessionalHome> {
-  final int _qtd = 0;
+  // final int _qtd = 0;
 
   final List<String> entries = <String>['A', 'B', 'C'];
   final List<int> colorCodes = <int>[600, 500, 100];

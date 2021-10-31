@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:vacinapp/user/pass.dart';
-import 'package:vacinapp/user/register.dart';
+import 'package:vacinapp/models/user.dart';
+
+import 'home.dart';
 
 class UserLogin extends StatefulWidget {
   const UserLogin({Key? key}) : super(key: key);
@@ -13,16 +14,20 @@ class UserLogin extends StatefulWidget {
 
 class _UserLoginState extends State<UserLogin> {
   void _acessar() {
-    // print('acessar');
-    bool cadastrado = false;
+    if (_nameInput.text != '') {
+      User user = User(name: _nameInput.text);
+      user.save();
+    }
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => PassUser(),
+        builder: (BuildContext context) => UserHome(),
       ),
     );
   }
+
+  final TextEditingController _nameInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +56,11 @@ class _UserLoginState extends State<UserLogin> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: TextField(
-                keyboardType: TextInputType.number,
+              child: TextFormField(
+                controller: _nameInput,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "CPF (Somente números)",
+                  labelText: "Nome",
                   labelStyle: TextStyle(
                     color: Colors.blue[400],
                     fontSize: 20,
