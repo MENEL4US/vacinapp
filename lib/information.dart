@@ -25,6 +25,7 @@ class _InformationState extends State<Information> {
   _InformationState() {
     _getInfos();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

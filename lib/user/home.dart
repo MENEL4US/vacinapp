@@ -45,6 +45,133 @@ class _UserHomeState extends State<UserHome> {
     _getMyVaccines();
   }
 
+  TabBarView _userHomeContent() {
+    return TabBarView(
+      children: [
+        ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: emDia.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Center(
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                color: Colors.green[300],
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Text(
+                          emDia[index].name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                        child: Text(
+                          emDia[index].description,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        ),
+        ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: proximas.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Center(
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                color: Colors.deepPurple[400],
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Text(
+                          proximas[index].name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                        child: Text(
+                          proximas[index].description,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        ),
+        ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: atrasadas.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Center(
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                color: Colors.red[400],
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        child: Text(
+                          atrasadas[index].name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                        child: Text(
+                          atrasadas[index].description,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        )
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -67,130 +194,7 @@ class _UserHomeState extends State<UserHome> {
             ],
           ),
         ),
-        body: TabBarView(
-          children: [
-            ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: emDia.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Center(
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    color: Colors.green[300],
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              emDia[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
-                          subtitle: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              emDia[index].description,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
-            ),
-            ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: proximas.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Center(
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    color: Colors.deepPurple[400],
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              proximas[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
-                          subtitle: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              proximas[index].description,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
-            ),
-            ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: atrasadas.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Center(
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    color: Colors.red[400],
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              atrasadas[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
-                          subtitle: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Text(
-                              atrasadas[index].description,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
-            )
-          ],
-        ),
+        body: _userHomeContent(),
       ),
     );
   }

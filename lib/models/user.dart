@@ -18,14 +18,6 @@ class User {
     return data;
   }
 
-  Future<User> get() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? aux = prefs.getString('user_info');
-    Map<String, dynamic> mapUser = json.decode(aux!);
-    User user = User.fromJson(mapUser);
-    return user;
-  }
-
   void save(String chave) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(chave, json.encode(toJson()));
