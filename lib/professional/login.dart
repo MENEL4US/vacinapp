@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vacinapp/models/user.dart';
 import 'home.dart';
 
@@ -10,10 +11,11 @@ class ProfessionalLogin extends StatefulWidget {
 }
 
 class _ProfessionalLoginState extends State<ProfessionalLogin> {
-  void _acessar() {
+  Future<void> _acessar() async {
     if (_professionalInput.text != '') {
       User user = User(name: _professionalInput.text);
-      user.save('professional_info');
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('professional_info', user.name);
     }
 
     Navigator.push(

@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:vacinapp/models/api.dart';
 import 'package:vacinapp/models/info.dart';
+import 'package:http/http.dart' as http;
+
+const urlBase = 'https://617e75d52ff7e600174bd7e2.mockapi.io/api/';
 
 class Information extends StatefulWidget {
   const Information({Key? key}) : super(key: key);
@@ -13,17 +15,11 @@ class Information extends StatefulWidget {
 class _InformationState extends State<Information> {
   var infos = <Info>[];
 
-  _getInfos() {
-    API.getInfos().then((value) {
-      setState(() {
-        Iterable lista = json.decode(value.body);
-        infos = (lista).map((e) => Info.fromJson(e)).toList();
-      });
-    });
-  }
-
-  _InformationState() {
-    _getInfos();
+  Future _getInfos() async {
+    var url = Uri.parse(urlBase + 'infos');
+    var response = await http.get(url);
+    Iterable lista = json.decode(response.body);
+    infos = (lista).map((e) => Info.fromJson(e)).toList();
   }
 
   @override
@@ -39,7 +35,18 @@ class _InformationState extends State<Information> {
         centerTitle: true,
         backgroundColor: Colors.blue[400],
       ),
-      body: listaInfos(),
+      body: FutureBuilder(
+        future: _getInfos(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return listaInfos();
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
     );
   }
 
