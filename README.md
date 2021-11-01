@@ -11,10 +11,11 @@ Novos Caminhos EAD (T1/2021 - Florianópolis).
 - Future e indicação de progresso
 - Splash Screen ao abrir o app
 
-> Splash Screen
+
+
 ![alt text](https://raw.githubusercontent.com/MENEL4US/vacinapp/main/images/splash_screen.PNG)
 
-> Home Page
+
 ![alt text](https://raw.githubusercontent.com/MENEL4US/vacinapp/main/images/home.PNG)
 
 Luiz Mendes     01/11/2021
