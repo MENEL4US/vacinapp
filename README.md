@@ -12,10 +12,10 @@ Novos Caminhos EAD (T1/2021 - Florianópolis).
 - Splash Screen ao abrir o app
 
 > Splash Screen
-![alt text](https://github.com/MENEL4US/vacinapp/tree/main/images/splash_screen.PNG)
+![alt text](https://raw.githubusercontent.com/MENEL4US/vacinapp/main/images/splash_screen.PNG)
 
 > Home Page
-![alt text](https://github.com/MENEL4US/vacinapp/tree/main/images/home.PNG)
+![alt text](https://raw.githubusercontent.com/MENEL4US/vacinapp/main/images/home.PNG)
 
 Luiz Mendes     01/11/2021
 >Visite meu [Linkedin](https://www.linkedin.com/in/luiz-mendes-dev/) :D
